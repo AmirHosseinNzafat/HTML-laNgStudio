@@ -19,7 +19,7 @@ HTML Forge Studio is an experimental, single-page game editor built with HTML, C
 - Inspector controls for name, color, position, rotation and scale.
 - Asset import for images, audio, GLB/glTF and JSON files. Images and audio are stored as data URLs in the project.
 - Visual scripting toolbox: start, key, click and update events; move, rotate, scale, color, message, score and sound actions.
-- 10 reusable JavaScript snippet templates for common game tasks.
+- 20 reusable JavaScript snippet templates for common game tasks.
 - Direct JavaScript editor with `game`, `scene` and `THREE` references.
 - Play/stop preview, project JSON save/open, browser local backup and standalone HTML export.
 - Export embeds the project JSON and imported data-URL assets into the generated HTML file.
