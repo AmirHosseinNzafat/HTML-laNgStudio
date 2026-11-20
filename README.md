@@ -1,6 +1,6 @@
 # HTML Forge Studio
 
-**Browser-based 2D / 3D HTML game maker — Roblox-inspired demo 0.2**
+**Browser-based 2D / 3D HTML game maker — Roblox-inspired demo 0.3**
 
 HTML Forge Studio is a single-page game editor built with HTML, CSS and JavaScript. Its 3D workflow is designed to feel approachable: open a ready-made baseplate, add parts, orbit the editor camera, press Play and walk around the world.
 
@@ -17,7 +17,7 @@ HTML Forge Studio is a single-page game editor built with HTML, CSS and JavaScri
 - Add blocks, spheres, ground parts, grass blocks, stone blocks, walls and a five-step staircase.
 - Import images, audio and GLB/glTF models.
 - Click an object in the viewport or Scene tree to select it. Use the Inspector to edit its name, color, position, rotation and scale; duplicate or delete it.
-- **Editor camera:** right mouse drag to orbit, mouse wheel to zoom, middle mouse drag to pan, WASD to move the camera target, Q/E to move vertically, and F to focus the selected object.
+- **Transform gizmos:** select a 3D object to show axis handles; choose Move, Rotate or Scale and drag the red X, green Y or blue Z handle directly in the viewport. W/E/R switch tools. Optional Snap rounds movement, rotation (15°) and scaling.\n- **Editor camera:** right mouse drag to orbit, mouse wheel to zoom, middle mouse drag to pan, arrow keys to move the camera target, Q/PageDown to move vertically, and F to focus the selected object.
 - **Play mode:** third-person character, WASD / arrow-key movement, Space to jump, mouse to rotate the camera, and the return-to-editor button to stop.
 - Basic gravity, ground/platform landing and approximate block/model collision are included for the playable character. This is a lightweight prototype controller, not a full physics simulation.
 
