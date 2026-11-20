@@ -66,7 +66,17 @@ const snippets=[
 ['نور نقطه‌ای','if (scene && THREE) { const light = new THREE.PointLight(0xffffff, 2, 20); light.position.set(2,4,2); scene.add(light); }'],
 ['شمارنده امتیاز','let forgeTimer = 0; const forgeInterval = setInterval(() => { game.score += 1; forgeTimer++; if (forgeTimer >= 10) clearInterval(forgeInterval); }, 1000);'],
 ['پیام پایان مرحله','if (game.score >= 100) game.message("مرحله با موفقیت تمام شد!");'],
-['گزارش تعداد اجزا','game.message("تعداد اجزای صحنه: " + (scene ? scene.children.length : 0));']
+['گزارش تعداد اجزا','game.message("تعداد اجزای صحنه: " + (scene ? scene.children.length : 0));'],
+['کلیک برای امتیاز','document.addEventListener("click", () => { game.score += 1; });'],
+['دکمه افزایش امتیاز','const b=document.createElement("button");b.textContent="امتیاز +10";b.style.cssText="position:fixed;bottom:24px;right:24px;z-index:9999;padding:12px 18px";b.onclick=()=>{game.score+=10;game.message("+10")};document.body.append(b);'],
+['دکمه تمام‌صفحه','const b=document.createElement("button");b.textContent="تمام‌صفحه";b.style.cssText="position:fixed;bottom:24px;left:24px;z-index:9999;padding:12px";b.onclick=()=>document.documentElement.requestFullscreen?.();document.body.append(b);'],
+['شمارش معکوس','let t=10;const id=setInterval(()=>{game.message("زمان: "+t);t--;if(t<0){clearInterval(id);game.message("زمان تمام شد")}},1000);'],
+['ساخت مکعب','if(scene&&THREE){const m=new THREE.Mesh(new THREE.BoxGeometry(),new THREE.MeshStandardMaterial({color:0x38d9ff}));m.position.set(2,1,0);scene.add(m)}'],
+['ساخت کره','if(scene&&THREE){const m=new THREE.Mesh(new THREE.SphereGeometry(.7,24,16),new THREE.MeshStandardMaterial({color:0xffc857}));m.position.set(-2,1,0);scene.add(m)}'],
+['ساخت زمین','if(scene&&THREE){const m=new THREE.Mesh(new THREE.BoxGeometry(12,.2,12),new THREE.MeshStandardMaterial({color:0x33445c}));m.position.y=-1;scene.add(m)}'],
+['نور محیطی','if(scene&&THREE)scene.add(new THREE.AmbientLight(0xffffff,1.2));'],
+['بررسی برد','if(game.score>=50)game.message("برنده شدی!");'],
+['بررسی باخت','if(game.score<0)game.message("باختی! دوباره تلاش کن.");']
 ];
 snippets.forEach(([name,code])=>{const b=document.createElement('button');b.style.cssText='display:block;width:100%;text-align:right;margin:5px 0;font-size:11px';b.textContent='＋ '+name;b.onclick=()=>{project.customCode+=(project.customCode?'\n\n':'')+'// '+name+'\n'+code;$('customCode').value=project.customCode;$('codeModal').classList.remove('hidden');log('Code snippet added: '+name)};$('snippetList').append(b)});
 document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('active',x===b));['scene','assets','blocks'].forEach(t=>$('tab-'+t).classList.toggle('hidden',t!==b.dataset.tab))});
